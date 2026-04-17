@@ -1,229 +1,323 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock title %} | Ecom Express</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  
-<!--css file-->
-<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EcomExpress{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* [COPY ALL YOUR <style> TAG CONTENT HERE] */
+body { 
+            background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { 
+            background: white; padding: 15px 30px; }
+        .navbar-brand { 
+            color: #0066ff !important; font-weight: 700; font-size: 24px; }
+        
+        .navbar, .header-container { 
+            position: sticky;
+            top: 0;
+            z-index: 1000; 
+            background-color: #ffffff; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
 
-</head>
-  <body>
-    <!-- adding navbar  -->
-       <nav class="navbar navbar-expand-lg navbar-scroll shadow-0" style="background-color: #ffede7;">
-    <div class="container">
-      <a class="navbar-brand" href="#"><b>Ecom Express</b></a>
-      <button class="navbar-toggler ps-0" type="button" data-mdb-collapse-init data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="d-flex justify-content-start align-items-center">
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link px-3" href="/Home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/products">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/about">About Us</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link px-3" href="/catalog">catalog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/contact">contact us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/login">login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/signup">signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="/logout">logout</a>
-          </li>
-        </ul>
-  
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item">
-            <a class="nav-link pe-3" href="#!">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="#!">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-3" href="#!">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        .nav-pills-custom { 
+            background: #fff; padding: 8px 20px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 10px; }
+        .nav-link-custom { 
+            border: none; background: none; padding: 8px 15px; border-radius: 30px; font-weight: 500; color: #666; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
+        .nav-link-custom.active { 
+            background: #eef4ff; color: #0066ff; }
 
+        .search-container { 
+            position: relative; width: 300px; }
+        .search-input { 
+            border-radius: 50px; padding: 10px 20px 10px 40px; border: 1px solid #eee; background: #fff; }
+        .search-icon { 
+            position: absolute; left: 15px; top: 12px; color: #aaa; }
+        .cart-icon-btn { 
+            width: 45px; height: 45px; border-radius: 50%; border: 1px solid #0066ff; display: flex; align-items: center; justify-content: center; color: #0066ff; background: white; }
 
-  {% block content %}{% endblock content %}
-   <!-- adding footer  -->
-<br/>
-<div >
-
-  <!-- Footer -->
-  <footer
-          class="text-center text-lg-start text-white"
-          style="background-color: #1c2331"
-          >
-    <!-- Section: Social media -->
-    <section
-             class="d-flex justify-content-between p-4"
-             style="background-color: #6351ce"
-             >
-      <!-- Left -->
-      <div class="me-5">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-
-      <!-- Right -->
-      <div>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Company name</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Products</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              <a href="#!" class="text-white">MDBootstrap</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">MDWordPress</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">BrandFlow</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Bootstrap Angular</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              <a href="#!" class="text-white">Your Account</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
-        >
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-
-</div>
-<!-- End of .container -->
-
-
+        .hero-banner { 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{% static "img/Ecom-express.png" %}');
+            background-size: cover; background-position: center; height: 350px; border-radius: 30px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 20px; 
+        }
+        .sub-nav-bar { 
+            background: white; border-radius: 50px; padding: 15px; margin: -30px auto 40px; max-width: 800px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; justify-content: center; gap: 30px; }
+        .product-card { 
+            border: none; border-radius: 20px; overflow: hidden; background: white; transition: 0.3s; }
+        .product-img { 
+            width: 100%; height: 250px; object-fit: cover; cursor: pointer; }
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+  footer {
+    background-color: #212529; /* Dark background */
+    color: #ffffff; /* White text for contrast */
+    padding: 30px 0;
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}  
+
+/* Container for the image to prevent it from overlapping the card when zooming */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; 
+}
+
+/* The actual image hover effect */
+.product-img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1); 
+    filter: brightness(90%);
+}
+
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        
+        <a class="navbar-brand fw-bold text-primary mb-0" href="{% url 'home' %}">EcomExpress</a>
+
+        <div class="navbar-nav d-flex flex-row align-items-center gap-2 bg-white rounded-pill px-3 py-1 shadow-sm">
+            <button class="nav-link-custom active" onclick="filterCat('all', this)">🌐 All</button>
+            <button class="nav-link-custom" onclick="filterCat('grocery', this)">🍎 Grocery</button>
+            <button class="nav-link-custom" onclick="filterCat('clothing', this)">👕 Clothing</button>
+            <button class="nav-link-custom" onclick="filterCat('makeup', this)">💄 Makeup</button>
+
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <div class="d-flex gap-2 border-end pe-3">
+                <a href="{% url 'login' %}" class="nav-link-custom"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>
+                <a href="{% url 'signup' %}" class="nav-link-custom"><i class="bi bi-person-plus  me-1"></i> Sign Up</a>
+                <a href="{% url 'contact' %}" class="nav-link-custom"><i class="bi bi-telephone me-1"></i> Contact</a>
+                
+           
+              </div>
+
+
+            <div class="d-flex align-items-center gap-3">
+            <div class="search-container"><i class="bi bi-search search-icon"></i><input type="text" class="form-control search-input" placeholder="Search..."></div>
+            <button class="btn btn-outline-primary rounded-circle p-2 ms-3 position-relative" type="button" data-bs-toggle="offcanvas"data-bs-target="#cartSidebar">
+               <i class="bi bi-cart3"></i>
+                 <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+        0
+    </span>
+</button>
+        </div>
+    </nav>
+       
+
+
+    </div>
+</nav>
+
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">© 2026 EcomExpress..</p>
+        </div>
+    </footer>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="fw-bold mb-0" id="cartLabel">Your Shopping Cart</h5>
+        <button class="btn position-relative cart-icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+           <i class="bi bi-cart3 fs-4"></i>
+           <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+        
+    </span>
+</button> 
+        
+        
+    </div>
+    
+    <div class="offcanvas-body" id="cart-items-list">
+        </div>
+
+    <div class="offcanvas-footer p-3 border-top">
+        <div class="d-flex justify-content-between mb-3">
+            <h5 class="fw-bold">Subtotal:</h5>
+            <h5 class="fw-bold" id="cart-subtotal">₹0</h5>
+        </div>
+        <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Proceed to Checkout</button>
+    </div>
+</div>
+
+
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /* [COPY ALL YOUR <script> TAG CONTENT HERE] */
+
+        function filterCat(cat, btn) {
+            document.querySelectorAll('.nav-link-custom').forEach(l => l.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.product-item').forEach(item => {
+                const itemCat = item.getAttribute('data-cat');
+                item.style.display = (cat === 'all' || itemCat === cat) ? 'block' : 'none';
+            });
+        }
+        function showModal(name, img, price, desc) {
+            document.getElementById('m-title').innerText = name;
+            document.getElementById('m-img').src = img;
+            document.getElementById('m-price').innerText = '₹' + price;
+            document.getElementById('m-desc').innerText = desc || "Premium quality product selected specifically for you.";
+            var myModal = new bootstrap.Modal(document.getElementById('productModal'));
+            myModal.show();
+        }
+   
+
+    // This object holds the data for your 4 different banner states
+const bannerData = {
+    'all': {
+        img: "{% static 'img/An-automated-sortation-centre-at-Delhivery-s-truck_1689877048934_1762358893569.avif' %}", 
+        title: "Welcome to EcomExpress",
+        desc: "Everything you need, all in one place."
+    },
+    'grocery': {
+        img: "{% static 'img/r-du-plessis-cXvqCw0m5WE-unsplash.jpg' %}", 
+        title: "The Fresh Market",
+        desc: "Organic groceries delivered straight from the farm."
+    },
+    'makeup': {
+        img: "{% static 'img/shamblen-studios-xwM61TPMlYk-unsplash.jpg' %}",
+        title: "Beauty & Cosmetics",
+        desc: "Professional makeup for every skin tone."
+    },
+    'clothing': {
+        img: "{% static 'img/burgess-milner-OYYE4g-I5ZQ-unsplash.jpg' %}",
+        title: "Premium Fashion Hub",
+        desc: "Discover the latest trends in modern apparel."
+    }
+};
+
+function filterCat(cat, btn) {
+    // 1. Highlight the active button
+    document.querySelectorAll('.nav-link-custom').forEach(l => l.classList.remove('active'));
+    btn.classList.add('active');
+
+    // 2. Filter the product grid below
+    document.querySelectorAll('.product-item').forEach(item => {
+        const itemCat = item.getAttribute('data-cat');
+        item.style.display = (cat === 'all' || itemCat === cat) ? 'block' : 'none';
+    });
+
+    // 3. Update the SINGLE hero banner with new image and text
+    const data = bannerData[cat];
+    if (data) {
+        const hero = document.getElementById('hero-main');
+        hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${data.img})`;
+        document.getElementById('hero-title').innerText = data.title;
+        document.getElementById('hero-desc').innerText = data.desc;
+    }
+}
+
+// Search Bar Logic
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('keyup', function() {
+    let query = this.value.toLowerCase();
+    document.querySelectorAll('.product-item').forEach(item => {
+        let name = item.querySelector('h5').innerText.toLowerCase();
+        let category = item.querySelector('h6').innerText.toLowerCase();
+        // Shows item if name OR category matches search
+        if (name.includes(query) || category.includes(query)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name: name, price: parseInt(price) });
+    renderCart();
+    
+}
+
+function renderCart() {
+    const listContainer = document.getElementById('cart-items-list');
+    const subtotalDisplay = document.getElementById('cart-subtotal');
+    const countBadge = document.getElementById('cart-count');
+    let total = 0;
+
+    // 1. Update the Badge Number
+    if (cart.length > 0) {
+        countBadge.innerText = cart.length;
+        countBadge.style.display = 'block'; // Show badge if items > 0
+    } else {
+        countBadge.style.display = 'none'; // Hide badge if empty
+    }
+
+    // 2. Clear and Redraw Sidebar Items
+    listContainer.innerHTML = '';
+    cart.forEach((item, index) => {
+        total += item.price;
+        listContainer.innerHTML += `
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h6 class="fw-bold mb-1">${item.name}</h6>
+                    <span class="text-success">₹${item.price}</span>
+                </div>
+                <button class="btn btn-sm text-danger" onclick="removeFromCart(${index})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        `;
+    });
+
+    // 3. Update the Subtotal at the bottom
+    subtotalDisplay.innerText = '₹' + total;
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+}
+
+    </script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i$&2_)s=wz8#rn)6ikd7von#c6r+$pijt_58r8ib#u05_(9u83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,3 +130,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     
 ]
+
+# settings.py
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'  # Or 'index' depending on your URL name
+LOGOUT_REDIRECT_URL = 'home'

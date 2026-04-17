@@ -68,3 +68,4 @@ def signupView(request):
 def logoutView(request):
     logout(request)
     return redirect('/login')
+
